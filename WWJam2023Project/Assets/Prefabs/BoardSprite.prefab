@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 807162230494123949}
   - component: {fileID: 3843038324932602717}
-  - component: {fileID: 895260475108479378}
+  - component: {fileID: 5125782071716972550}
   m_Layer: 3
   m_Name: BoardSprite
   m_TagString: Untagged
@@ -217,7 +217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PureSpriteRenderer: {fileID: 5658486455932832287}
   CorruptSpriteRenderer: {fileID: 1655758465096079505}
---- !u!61 &895260475108479378
+  bc2d: {fileID: 5125782071716972550}
+--- !u!61 &5125782071716972550
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +228,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -241,5 +242,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.53, y: 1.53}
+  m_Size: {x: 2.25, y: 2.25}
   m_EdgeRadius: 0

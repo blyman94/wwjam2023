@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -21668,10 +21668,10 @@ TextureImporter:
       Background_894: -281636086
       Background_55: -1065184957
       Background_60: -1041028183
-      Background_522: -1686896746
-      Background_685: 1704005611
-      Background_599: 1531003409
       Background_933: -397835698
+      Background_522: -1686896746
+      Background_599: 1531003409
+      Background_685: 1704005611
       Background_992: 1386345803
       Background_224: -1827260664
       Background_247: 1656561559
@@ -21742,6 +21742,7 @@ TextureImporter:
       Background_344: -1732750899
       Background_43: -588577863
       Background_1000: -1806909064
+      Background_649: 1635540886
       Background_483: -2111771252
       Background_355: 199548436
       Background_503: -1311351658
@@ -21751,21 +21752,20 @@ TextureImporter:
       Background_458: -1547384684
       Background_429: 449675102
       Background_869: -1899658547
-      Background_597: 826648524
+      Background_1022: -1236933463
       Background_12: -115995806
       Background_10: 934910116
+      Background_597: 826648524
       Background_380: -1960106848
-      Background_1022: -1236933463
-      Background_882: -1033310064
       Background_874: 1321590785
-      Background_649: 1635540886
       Background_111: -1012920467
       Background_602: 331371329
       Background_209: -1804626852
       Background_612: 1914492184
-      Background_1009: 1330986884
+      Background_882: -1033310064
       Background_871: 1900388862
       Background_510: -1949305051
+      Background_1009: 1330986884
       Background_650: -1932640446
       Background_617: 2112569012
       Background_851: -1785613982
@@ -21786,13 +21786,13 @@ TextureImporter:
       Background_620: -2133578598
       Background_79: 622715823
       Background_841: 2050216629
-      Background_891: 1276089826
       Background_1023: -696342934
+      Background_891: 1276089826
       Background_147: 227802697
       Background_130: -250649990
+      Background_887: -546713211
       Background_323: 1849865528
       Background_420: -1307495469
-      Background_887: -546713211
       Background_640: 610772549
       Background_775: 871757127
       Background_715: -92162791
@@ -21871,18 +21871,18 @@ TextureImporter:
       Background_704: -420243705
       Background_886: -1907746613
       Background_529: 1013262874
+      Background_928: 691852896
       Background_261: 950956980
+      Background_930: -269962567
       Background_202: 345656578
       Background_151: 319165718
       Background_527: 2076293532
-      Background_930: -269962567
       Background_632: 1064850164
       Background_465: 1426887086
       Background_358: 1492849112
       Background_884: 1366258900
-      Background_928: 691852896
-      Background_810: -1692468359
       Background_958: 969638837
+      Background_810: -1692468359
       Background_596: -504074308
       Background_655: 1362904833
       Background_540: -1668470833
@@ -21935,22 +21935,22 @@ TextureImporter:
       Background_114: -1535954096
       Background_301: -869163326
       Background_265: -869338233
-      Background_326: 2029360855
       Background_164: 1864189878
-      Background_558: 62333289
+      Background_1014: 998176811
+      Background_326: 2029360855
       Background_350: -725956203
+      Background_558: 62333289
       Background_550: 692506873
       Background_21: -1923239546
       Background_539: -1426040594
-      Background_1014: 998176811
       Background_976: -916235734
       Background_454: 118022495
       Background_462: -856562387
       Background_855: 999079494
       Background_90: -2005198958
-      Background_320: -1539306499
       Background_332: 524343972
       Background_890: 1151746592
+      Background_320: -1539306499
       Background_408: 452261265
       Background_65: -1757898700
       Background_351: 220386641
@@ -21964,13 +21964,13 @@ TextureImporter:
       Background_255: -872627580
       Background_902: 1498790028
       Background_176: 1564001929
-      Background_521: -1419798826
       Background_931: 925631115
+      Background_521: -1419798826
       Background_736: 1194422095
       Background_648: -63438262
       Background_536: 1995961552
-      Background_864: 659736576
       Background_883: -1978167866
+      Background_864: 659736576
       Background_744: -993337961
       Background_667: 156894682
       Background_852: -1203688262
@@ -22138,16 +22138,16 @@ TextureImporter:
       Background_388: -1318225300
       Background_340: 2078465883
       Background_107: -1819723301
-      Background_264: -1660527829
       Background_892: -93985641
-      Background_603: -1573922498
+      Background_264: -1660527829
       Background_125: 425307544
       Background_180: -151803482
+      Background_603: -1573922498
       Background_310: 101721517
-      Background_996: 1315296732
       Background_746: 1031305569
       Background_823: -993064986
       Background_393: -1295662513
+      Background_996: 1315296732
       Background_898: 623857296
       Background_984: 1218351442
       Background_489: 1811418576
@@ -22175,14 +22175,13 @@ TextureImporter:
       Background_600: 660323901
       Background_873: -81132694
       Background_397: 2041837087
-      Background_205: -596934195
-      Background_482: 1080036143
       Background_893: 1711532745
-      Background_516: 366337669
+      Background_482: 1080036143
       Background_659: -370903837
       Background_240: 283733054
-      Background_927: -343095815
+      Background_205: -596934195
       Background_37: -1469313452
+      Background_516: 366337669
       Background_642: 694546358
       Background_615: -1518714915
       Background_908: -207655276
@@ -22198,6 +22197,7 @@ TextureImporter:
       Background_555: -1487586363
       Background_734: -1852474896
       Background_587: -2110548870
+      Background_927: -343095815
       Background_168: 743519361
       Background_729: 505267579
       Background_568: 638339359
@@ -22299,12 +22299,12 @@ TextureImporter:
       Background_733: 1957816352
       Background_304: -76080205
       Background_680: 151230528
-      Background_842: -726956466
       Background_964: -1063497876
       Background_888: -720789950
       Background_643: 636208792
       Background_613: 1853355739
       Background_867: -1653768996
+      Background_842: -726956466
       Background_531: -181640822
       Background_606: -1862918687
       Background_950: 1837136260

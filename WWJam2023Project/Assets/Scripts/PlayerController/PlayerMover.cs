@@ -10,6 +10,13 @@ public class PlayerMover : MonoBehaviour
 
     public Vector2 MoveInput { get; set; }
 
+    public Vector3Variable _playerPosition;
+
+    private void Update()
+    {
+        _playerPosition.Value = transform.position;
+    }
+
     private void FixedUpdate()
     {
         // Read the input axes
