@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameEvent enemyHitTreeEvent;
     public Vector3Variable TreePosition;
     public bool PlayerIsNearEnemy { get; set; } = false;
 
@@ -13,16 +14,34 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private Rigidbody2D _rb;
 
-    public float speed = 10.0f;
+    public BoxCollider2D toggleCollider;
 
-    public void KillMovement()
-    {
-        MoveInput = Vector2.zero;
-    }
+    public float treeDist = 10;
+
+    public float speed = 10.0f;
 
     private void Start()
     {
+        toggleCollider.enabled = false;
         MoveInput = (TreePosition.Value - transform.position).normalized * speed;
+    }
+
+    private void Update()
+    {
+        float distanceFromTree = Mathf.Abs((TreePosition.Value - transform.position).magnitude);
+        if (distanceFromTree < treeDist)
+        {
+            toggleCollider.enabled = true;
+        }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Tree"))
+        {
+            enemyHitTreeEvent.Raise();
+        }
     }
 
     private void FixedUpdate()
@@ -41,6 +60,11 @@ public class Enemy : MonoBehaviour
         _rb.velocity = movement;
     }
 
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
 
     public void OnPlayerInteractResponse()
     {
@@ -49,6 +73,6 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        Destroy(gameObject);
+        Die();
     }
 }
