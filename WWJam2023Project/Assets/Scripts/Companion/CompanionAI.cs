@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CompanionAI : MonoBehaviour
 {
+    public UnityEvent ReachedPlayerEvent;
+    public UnityEvent SentOutEvent;
+
     public float speed = 10.0f;
 
     public float followPlayerSpeed = 4.0f;
 
+    public bool PlayerIsNear { get; set; }
+
     [SerializeField] private Rigidbody2D _rb;
 
     [SerializeField] private Vector3Variable _playerPosition;
+    [SerializeField] private BoolVariable _playerHasFlower;
 
     public float stopDistance = 2.0f;
 
@@ -19,12 +26,14 @@ public class CompanionAI : MonoBehaviour
     public bool IsFollowingPlayer;
     public bool IsGoingToEdge;
 
+    private bool _needsFood = false;
+
     private float _currentSpeed;
 
     private void Start()
     {
-        MoveInput = Vector2.down;
-        SendInDirection(new Vector2(-1, -1));
+        IsFollowingPlayer = true;
+        _currentSpeed = followPlayerSpeed;
     }
 
     private void Update()
@@ -34,6 +43,8 @@ public class CompanionAI : MonoBehaviour
             float distanceFromPlayer = Mathf.Abs((transform.position - _playerPosition.Value).magnitude);
             if (distanceFromPlayer <= stopDistance)
             {
+                ReachedPlayerEvent.Invoke();
+                _needsFood = true;
                 _currentSpeed = followPlayerSpeed;
                 MoveInput = Vector2.zero;
             }
@@ -60,8 +71,18 @@ public class CompanionAI : MonoBehaviour
         _rb.velocity = movement;
     }
 
+    public void OnPlayerInteractResponse()
+    {
+        if (PlayerIsNear && _needsFood && _playerHasFlower)
+        {
+            Vector2 randomDir = Random.insideUnitCircle;
+            SendInDirection(randomDir);
+        }
+    }
+
     public void SendInDirection(Vector2 direction)
     {
+        SentOutEvent?.Invoke();
         _currentSpeed = speed;
         IsFollowingPlayer = false;
         IsGoingToEdge = true;

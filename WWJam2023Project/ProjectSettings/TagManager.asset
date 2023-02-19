@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bunny
   - LevelBound
+  - Flower
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GameworldUI
+    uniqueID: 896060341
     locked: 0
