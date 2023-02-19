@@ -15,6 +15,11 @@ public class Enemy : MonoBehaviour
 
     public float speed = 10.0f;
 
+    public void KillMovement()
+    {
+        MoveInput = Vector2.zero;
+    }
+
     private void Start()
     {
         MoveInput = (TreePosition.Value - transform.position).normalized * speed;

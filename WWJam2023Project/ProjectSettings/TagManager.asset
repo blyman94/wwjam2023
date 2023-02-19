@@ -10,6 +10,7 @@ TagManager:
   - Acorn
   - Tree
   - Enemy
+  - TreePhysical
   layers:
   - Default
   - TransparentFX
