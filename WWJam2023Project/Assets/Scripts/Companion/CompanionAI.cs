@@ -30,6 +30,11 @@ public class CompanionAI : MonoBehaviour
 
     private float _currentSpeed;
 
+    private void Awake()
+    {
+        _playerHasFlower.Value = false;
+    }
+
     private void Start()
     {
         IsFollowingPlayer = true;
@@ -44,8 +49,11 @@ public class CompanionAI : MonoBehaviour
             float distanceFromPlayer = Mathf.Abs((transform.position - _playerPosition.Value).magnitude);
             if (distanceFromPlayer <= stopDistance)
             {
-                ReachedPlayerEvent.Invoke();
-                _needsFood = true;
+                if (!_needsFood)
+                {
+                    ReachedPlayerEvent.Invoke();
+                    _needsFood = true;
+                }
                 _currentSpeed = followPlayerSpeed;
                 MoveInput = Vector2.zero;
             }
@@ -84,6 +92,7 @@ public class CompanionAI : MonoBehaviour
     public void SendInDirection(Vector2 direction)
     {
         SentOutEvent?.Invoke();
+        _needsFood = false;
         _currentSpeed = speed;
         IsFollowingPlayer = false;
         IsGoingToEdge = true;

@@ -26,6 +26,11 @@ public class Tree : MonoBehaviour
     public GameEvent youWinEvent;
     public GameEvent youLoseEvent;
 
+    private void Awake()
+    {
+        _playerHasAcorn.Value = false;
+    }
+
     private void Start()
     {
         TreePosition.Value = transform.position;
@@ -58,7 +63,7 @@ public class Tree : MonoBehaviour
             return;
         }
 
-        if (_playerHasAcorn)
+        if (_playerHasAcorn.Value)
         {
             _playerHasAcorn.Value = false;
             promptIcon.gameObject.SetActive(false);

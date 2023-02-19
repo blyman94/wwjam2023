@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -26,6 +25,16 @@ public class Enemy : MonoBehaviour
         MoveInput = (TreePosition.Value - transform.position).normalized * speed;
     }
 
+    public void StopMovement()
+    {
+        MoveInput = Vector2.zero;
+    }
+
+    public void StartMovement()
+    {
+        MoveInput = (TreePosition.Value - transform.position).normalized * speed;
+    }
+
     private void Update()
     {
         float distanceFromTree = Mathf.Abs((TreePosition.Value - transform.position).magnitude);
@@ -36,11 +45,12 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private async void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.CompareTag("Tree"))
         {
             enemyHitTreeEvent.Raise();
+            await DieAfter3Seconds();
         }
     }
 
@@ -73,6 +83,12 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        Die();
+    }
+
+    public async Task DieAfter3Seconds()
+    {
+        await Task.Delay(3000);
         Die();
     }
 }
