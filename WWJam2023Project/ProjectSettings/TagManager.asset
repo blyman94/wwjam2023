@@ -8,6 +8,7 @@ TagManager:
   - LevelBound
   - Flower
   - Acorn
+  - Tree
   layers:
   - Default
   - TransparentFX
