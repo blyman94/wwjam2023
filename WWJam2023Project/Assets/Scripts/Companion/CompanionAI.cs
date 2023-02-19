@@ -39,7 +39,7 @@ public class CompanionAI : MonoBehaviour
         _playerHasFlower.Value = false;
     }
 
-    private void Start()
+    public void OnGameStart()
     {
         IsFollowingPlayer = true;
         _currentSpeed = followPlayerSpeed;

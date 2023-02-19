@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform Area4MinY;
     public Transform Area4MaxY;
 
-    private void Start()
+    public void OnGameStart()
     {
         InvokeRepeating("SpawnEnemy", delayTime, intervalTime);
     }
