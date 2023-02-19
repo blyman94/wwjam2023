@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class CompanionAI : MonoBehaviour
 {
+    public Animator animator;
+    public SpriteRenderer bunnyRend;
     public UnityEvent ReachedPlayerEvent;
     public UnityEvent SentOutEvent;
 
@@ -66,6 +68,18 @@ public class CompanionAI : MonoBehaviour
                 MoveInput = (_playerPosition.Value - transform.position).normalized * speed;
             }
         }
+
+        if (MoveInput.x < 0)
+        {
+            bunnyRend.flipX = false;
+        }
+        else
+        {
+            bunnyRend.flipX = true;
+        }
+
+        animator.SetFloat("MoveX", MoveInput.x);
+        animator.SetFloat("MoveY", MoveInput.y);
     }
 
     private void FixedUpdate()

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Animator animator;
+    public SpriteRenderer enemyRenderer;
     public GameEvent enemyHitTreeEvent;
     public Vector3Variable TreePosition;
     public bool PlayerIsNearEnemy { get; set; } = false;
@@ -25,16 +27,6 @@ public class Enemy : MonoBehaviour
         MoveInput = (TreePosition.Value - transform.position).normalized * speed;
     }
 
-    public void StopMovement()
-    {
-        MoveInput = Vector2.zero;
-    }
-
-    public void StartMovement()
-    {
-        MoveInput = (TreePosition.Value - transform.position).normalized * speed;
-    }
-
     private void Update()
     {
         float distanceFromTree = Mathf.Abs((TreePosition.Value - transform.position).magnitude);
@@ -43,6 +35,27 @@ public class Enemy : MonoBehaviour
             toggleCollider.enabled = true;
         }
 
+        if (MoveInput.x < 0)
+        {
+            enemyRenderer.flipX = false;
+        }
+        else
+        {
+            enemyRenderer.flipX = true;
+        }
+
+        animator.SetFloat("MoveX", MoveInput.x);
+        animator.SetFloat("MoveY", MoveInput.y);
+    }
+
+    public void StopMovement()
+    {
+        MoveInput = Vector2.zero;
+    }
+
+    public void StartMovement()
+    {
+        MoveInput = (TreePosition.Value - transform.position).normalized * speed;
     }
 
     private async void OnCollisionEnter2D(Collision2D other)

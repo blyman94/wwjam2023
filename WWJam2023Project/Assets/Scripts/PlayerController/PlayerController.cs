@@ -9,6 +9,11 @@ public class PlayerController : MonoBehaviour
     bool playerHasClicked = false;
     public void OnMovementInput(InputAction.CallbackContext context)
     {
+        if (!playerHasClicked)
+        {
+            playerHasClicked = true;
+            _playerClickEvent.Raise();
+        }
         if (context.performed)
         {
             _mover.MoveInput = context.ReadValue<Vector2>();
@@ -21,6 +26,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
+        if (!playerHasClicked)
+        {
+            playerHasClicked = true;
+            _playerClickEvent.Raise();
+        }
         if (context.started)
         {
             _playerInteractEvent.Raise();

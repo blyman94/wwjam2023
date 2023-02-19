@@ -17,6 +17,8 @@ public class Tree : MonoBehaviour
     public Sprite[] VeryDamagedSprites;
     public Sprite[] DeadSprites;
 
+    public Transform TreeDestination;
+
     public Vector3Variable TreePosition;
 
     List<Sprite[]> TreeMatrix;
@@ -34,7 +36,8 @@ public class Tree : MonoBehaviour
 
     private void Start()
     {
-        TreePosition.Value = transform.position;
+        TreePosition.Value = TreeDestination.position;
+
         TreeMatrix = new List<Sprite[]>();
         TreeMatrix.Add(DeadSprites);
         TreeMatrix.Add(VeryDamagedSprites);
