@@ -9,6 +9,7 @@ public class Tree : MonoBehaviour
     public GameObject promptIcon;
     public SpriteRenderer treeRenderer;
     public GameEvent acornAcceptedEvent;
+    public GameEvent damageTakenEvent;
 
     public Sprite[] UndamagedSprites;
     public Sprite[] SlightDamagedSprites;
@@ -54,11 +55,26 @@ public class Tree : MonoBehaviour
         if (_playerHasAcorn)
         {
             _playerHasAcorn.Value = false;
+            promptIcon.gameObject.SetActive(false);
             AcceptAcorn();
         }
 
         //_playerHasAcorn.Value = true;
         //Destroy(gameObject);
+    }
+
+    public void TakeDamage()
+    {
+        if (numHealth - 1 >= 0)
+        {
+            numHealth--;
+            treeRenderer.sprite = TreeMatrix[numHealth][numAcorns];
+            damageTakenEvent.Raise();
+            if (numHealth == 0)
+            {
+                Debug.Log("Lose!");
+            }
+        }
     }
 
     public void AcceptAcorn()
@@ -67,7 +83,7 @@ public class Tree : MonoBehaviour
         {
             numAcorns++;
             treeRenderer.sprite = TreeMatrix[numHealth][numAcorns];
-            acornAcceptedEvent?.Raise();
+            acornAcceptedEvent.Raise();
             if (numAcorns == 3)
             {
                 Debug.Log("Win!");
