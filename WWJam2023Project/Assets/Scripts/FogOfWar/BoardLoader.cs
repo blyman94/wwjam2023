@@ -19,7 +19,7 @@ public class BoardLoader : MonoBehaviour
             for (int j = 0; j < squareSize; j++)
             {
                 Vector3 position = startPos + new Vector3(j * horizontalSpacing,  -i * verticalSpacing, 0);
-                GameObject boardObject = Instantiate(boardSpritePrefab, position, Quaternion.identity);
+                GameObject boardObject = Instantiate(boardSpritePrefab, position, Quaternion.identity, transform);
                 BoardSprite boardSprite = boardObject.GetComponent<BoardSprite>();
                 boardSprite.PureSpriteRenderer.sprite = pureSprites[i * squareSize + j];
                 boardSprite.CorruptSpriteRenderer.sprite = corruptSprites[i * squareSize + j];

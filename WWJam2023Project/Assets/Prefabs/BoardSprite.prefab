@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2970066845420273098}
   - component: {fileID: 5658486455932832287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoardSpriteGraphicsPure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5976285774783683135}
   - component: {fileID: 1655758465096079505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoardSpriteGraphicsCorrupt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 807162230494123949}
   - component: {fileID: 3843038324932602717}
   - component: {fileID: 895260475108479378}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoardSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
