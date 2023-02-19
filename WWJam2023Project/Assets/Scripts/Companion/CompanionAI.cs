@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class CompanionAI : MonoBehaviour
 {
+    public AudioSource babaAudio;
+    public AudioClip sendClip;
+    public AudioClip eatClip;
     public Animator animator;
     public SpriteRenderer bunnyRend;
     public UnityEvent ReachedPlayerEvent;
@@ -102,6 +105,8 @@ public class CompanionAI : MonoBehaviour
     {
         if (PlayerIsNear && _needsFood && _playerHasFlower.Value)
         {
+            babaAudio.PlayOneShot(sendClip);
+            babaAudio.PlayOneShot(eatClip, 0.2f);
             if (isFirstTime)
             {
                 Vector2 dir = (FirstAcorn.position - transform.position).normalized;
