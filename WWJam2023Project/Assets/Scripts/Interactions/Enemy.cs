@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameEvent EnemyDiedEvent;
     public Animator animator;
     public SpriteRenderer enemyRenderer;
     public GameEvent enemyHitTreeEvent;
@@ -85,6 +86,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        EnemyDiedEvent.Raise();
         Destroy(gameObject);
     }
 

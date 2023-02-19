@@ -588,3 +588,4 @@ MonoBehaviour:
   flowerRenderer: {fileID: 4357637899894533118}
   _playerHasFlower: {fileID: 11400000, guid: 809125b5a3d4f1048b25d3d02cd70eb6, type: 2}
   promptGO: {fileID: 4357637900372799608}
+  trigger: {fileID: 4357637900585663300}

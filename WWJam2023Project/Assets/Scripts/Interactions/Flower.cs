@@ -10,6 +10,7 @@ public class Flower : MonoBehaviour
     public bool PlayerIsNearFlower { get; set; } = false;
     public BoolVariable _playerHasFlower;
     public GameObject promptGO;
+    public BoxCollider2D trigger;
 
     public void OnPlayerInteractResponse()
     {
@@ -18,6 +19,7 @@ public class Flower : MonoBehaviour
             return;
         }
 
+        trigger.enabled = false;
         flowerAudio.PlayOneShot(pickupAudioClip);
         _playerHasFlower.Value = true;
         promptGO.SetActive(false);

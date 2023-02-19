@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42956b539e33834095498d2c3678957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyDiedEvent: {fileID: 11400000, guid: d59307c070d26244a84c3750ab7ae4a3, type: 2}
   animator: {fileID: 2006787097079180458}
   enemyRenderer: {fileID: 3812481541787376134}
   enemyHitTreeEvent: {fileID: 11400000, guid: cf3bc88ff6bdffd488fce20b314cd7c4, type: 2}
