@@ -11,10 +11,24 @@ public class PlayerMover : MonoBehaviour
     public Vector2 MoveInput { get; set; }
 
     public Vector3Variable _playerPosition;
+    public Animator animator;
+    public SpriteRenderer charSpriteRend;
 
     private void Update()
     {
         _playerPosition.Value = transform.position;
+
+        if (MoveInput.x < 0)
+        {
+            charSpriteRend.flipX = false;
+        }
+        else
+        {
+            charSpriteRend.flipX = true;
+        }
+
+        animator.SetFloat("MoveX", MoveInput.x);
+        animator.SetFloat("MoveY", MoveInput.y);
     }
 
     private void FixedUpdate()

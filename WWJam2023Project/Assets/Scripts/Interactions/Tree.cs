@@ -23,6 +23,9 @@ public class Tree : MonoBehaviour
     private int numAcorns = 0;
     private int numHealth = 3;
 
+    public GameEvent youWinEvent;
+    public GameEvent youLoseEvent;
+
     private void Start()
     {
         TreePosition.Value = transform.position;
@@ -75,7 +78,7 @@ public class Tree : MonoBehaviour
             damageTakenEvent.Raise();
             if (numHealth == 0)
             {
-                Debug.Log("Lose!");
+                youLoseEvent.Raise();
             }
         }
     }
@@ -89,7 +92,7 @@ public class Tree : MonoBehaviour
             acornAcceptedEvent.Raise();
             if (numAcorns == 3)
             {
-                Debug.Log("Win!");
+                youWinEvent.Raise();
             }
         }
     }
