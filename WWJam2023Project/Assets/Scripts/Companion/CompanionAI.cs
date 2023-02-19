@@ -34,6 +34,7 @@ public class CompanionAI : MonoBehaviour
     {
         IsFollowingPlayer = true;
         _currentSpeed = followPlayerSpeed;
+        SendInDirection(Vector2.down);
     }
 
     private void Update()
@@ -73,7 +74,7 @@ public class CompanionAI : MonoBehaviour
 
     public void OnPlayerInteractResponse()
     {
-        if (PlayerIsNear && _needsFood && _playerHasFlower)
+        if (PlayerIsNear && _needsFood && _playerHasFlower.Value)
         {
             Vector2 randomDir = Random.insideUnitCircle;
             SendInDirection(randomDir);
