@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
+    public SpriteRenderer TreeStateRenderer;
     public bool PlayerIsNearTree { get; set; } = false;
     public BoolVariable _playerHasAcorn;
     public GameObject promptIcon;
@@ -39,6 +40,16 @@ public class Tree : MonoBehaviour
         TreeMatrix.Add(VeryDamagedSprites);
         TreeMatrix.Add(SlightDamagedSprites);
         TreeMatrix.Add(UndamagedSprites);
+    }
+
+    public void TransparentizeTree()
+    {
+        TreeStateRenderer.color = new Color(1, 1, 1, 0.5f);
+    }
+
+    public void UntransparentizeTree()
+    {
+        TreeStateRenderer.color = new Color(1, 1, 1, 1f);
     }
 
     public void OnEnterResponse()
