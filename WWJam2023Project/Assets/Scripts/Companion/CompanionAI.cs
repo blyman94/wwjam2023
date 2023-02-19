@@ -34,7 +34,7 @@ public class CompanionAI : MonoBehaviour
     {
         IsFollowingPlayer = true;
         _currentSpeed = followPlayerSpeed;
-        SendInDirection(Vector2.down);
+        //SendInDirection(Vector2.down);
     }
 
     private void Update()

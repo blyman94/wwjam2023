@@ -9,6 +9,7 @@ TagManager:
   - Flower
   - Acorn
   - Tree
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - CameraBounds
   - Player
   - Bunny
-  - 
+  - Enemy
   - 
   - 
   - 
