@@ -8,6 +8,8 @@ public class CompanionAI : MonoBehaviour
     public UnityEvent ReachedPlayerEvent;
     public UnityEvent SentOutEvent;
 
+    public Transform FirstAcorn;
+
     public float speed = 10.0f;
 
     public float followPlayerSpeed = 4.0f;
@@ -29,6 +31,8 @@ public class CompanionAI : MonoBehaviour
     private bool _needsFood = false;
 
     private float _currentSpeed;
+
+    private bool isFirstTime = true;
 
     private void Awake()
     {
@@ -84,8 +88,17 @@ public class CompanionAI : MonoBehaviour
     {
         if (PlayerIsNear && _needsFood && _playerHasFlower.Value)
         {
-            Vector2 randomDir = Random.insideUnitCircle;
-            SendInDirection(randomDir);
+            if (isFirstTime)
+            {
+                Vector2 dir = (FirstAcorn.position - transform.position).normalized;
+                SendInDirection(dir);
+                isFirstTime = false;
+            }
+            else
+            {
+                Vector2 randomDir = Random.insideUnitCircle;
+                SendInDirection(randomDir);
+            }
         }
     }
 
