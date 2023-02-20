@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
+    public GameObject minimapGO;
     public AudioSource flowerAudio;
     public AudioClip pickupAudioClip;
     public SpriteRenderer flowerRenderer;
@@ -23,6 +24,7 @@ public class Flower : MonoBehaviour
         flowerAudio.PlayOneShot(pickupAudioClip);
         _playerHasFlower.Value = true;
         promptGO.SetActive(false);
+        minimapGO.SetActive(false);
         flowerRenderer.color = Color.clear;
     }
 }

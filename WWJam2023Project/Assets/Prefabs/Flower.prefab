@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712a9c32d617ba74ab8ba60994f22b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimapGO: {fileID: 4357637899817710572}
   flowerAudio: {fileID: 2341431885027563861}
   pickupAudioClip: {fileID: 8300000, guid: 0e5d2b86d9f992c4b8b31ec88959dc54, type: 3}
   flowerRenderer: {fileID: 4357637899894533118}
